@@ -16,12 +16,14 @@ def get_sum():
             /api/get-sum/?a=1&b=2
             
         response data will be like this:
-            {
+            https://github.com/DavronDostqobilov/get-sum-flask.git
                 "sum": 3
             }
     """
-    pass
-
+    a=request.args.get('a')
+    b=request.args.get('b')
+    s=a+b
+    return {"sum":s}
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True,port='4080')
